@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Predictor system</title>
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/style.css')}} ">
+</head>
+<body>
+    <div class="top_container">
+        <div class = "top_cloud"> <img src="{{url_for('static' , filename='cloud.png')}}" alt=""> </div>
+        <h1>Predictor System </h1>
+        <div class="top_container_para"><p>The world as we see it....</p></div>
+        <div class = "bottom_cloud"><img src="{{url_for('static' , filename='cloud.png')}}" alt=""></div>
+    </div>
+
+    <br>
+    
+        <div class="form">
+        <form action="data" method = 'POST'>
+            <input type="file" id="csvfile" name="csvfile" required>
+            <label for="csvfile">Choose train CSV file</label>
+
+            <br><br>
+
+            <input type="file" id="csvfile1" name="csvfile1" required>
+            <label for="csvfile">Choose predict CSV file</label>
+
+            <br><br>
+
+            <input type="text" name="dep_var" placeholder="Enter Dependent Variable" required>
+            <!--<input type="file" name="csvfile" id="file" class="inputfile"/>-->
+            
+            <br><br>
+
+           <!--Select dependent variable type<br>
+            <input type="radio" id="cat_var" name="var" value="cat_var">
+            <label for="cat_var"> Categorical Variable</label><br>
+            <input type="radio" id="cont_var" name="var" value="cont_var">
+            <label for="cont_var">Continuous Variable</label>
+            <br><br>-->
+            <input type="submit" id="Submit" value = Submit'>
+            <label for="Submit">Submit File</label>
+        </form>
+        <br><br>
+        Precision Score: {{precision}}%<br>
+        Recall Score:  {{recall}}%
+    </div>
+
+    
+   
+    
+</body>
+</html>
